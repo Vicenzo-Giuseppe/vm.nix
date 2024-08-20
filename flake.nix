@@ -69,20 +69,22 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home.url = "github:nix-community/home-manager";
-    wezterm.url = "github:wez/wezterm?dir=nix";
+    wezterm.url = "github:thomascft/wezterm-nightly-flake";
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     neovim.url = "github:nix-community/neovim-nightly-overlay";
   };
   nixConfig = {
-    substituters = [
+    extra-substituters = [
       "https://zv.cachix.org"
       "https://nix-community.cachix.org"
       "https://cache.nixos.org/"
+      "https://wezterm-nightly.cachix.org"
     ];
-    trusted-public-keys = [
+    extra-trusted-public-keys = [
       "zv.cachix.org-1:IvFyOKHzPNNVSapGzeNPbrF65OoX/r+MROLHpGwsYfg="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "wezterm-nightly.cachix.org-1:zsTr51TeTCRg+bHwUr0KfW3XIIb7Avisrj/hXwVzC2c="
     ];
   };
 }
